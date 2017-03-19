@@ -14,6 +14,7 @@ import java.util.jar.Attributes;
 import java.util.jar.Manifest;
 
 import org.usfirst.frc.team4915.steamworks.Logger.Level;
+import org.usfirst.frc.team4915.steamworks.commands.BumpArcadeCommand;
 import org.usfirst.frc.team4915.steamworks.commands.ClimberSetCommand;
 import org.usfirst.frc.team4915.steamworks.commands.IntakeSetCommand;
 import org.usfirst.frc.team4915.steamworks.commands.LauncherCommand;
@@ -313,7 +314,7 @@ public class OI
 
         m_reverseDrive.toggleWhenPressed(new ReverseArcadeDriveCommand(m_robot.getDrivetrain(), m_robot.getCameras()));
         
-        m_bumpArcade.whileHeld(BumpArcadeCommand);
+        m_bumpArcade.whileHeld(new BumpArcadeCommand(m_robot.getDrivetrain()));
     }
 
     private void initIntakeOI()
