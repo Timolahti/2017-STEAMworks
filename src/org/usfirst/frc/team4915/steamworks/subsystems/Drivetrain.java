@@ -561,6 +561,11 @@ public class Drivetrain extends SpartronicsSubsystem
         }
     }
     
+    public void bumpArcade()
+    {
+        m_robotDrive.arcadeDrive(.2, 0);
+    }
+    
     public void setReverse()
     {
         

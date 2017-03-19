@@ -50,6 +50,8 @@ public class OI
     public final JoystickButton m_intakeReverse = new JoystickButton(m_driveStick, 4);
 
     public final JoystickButton m_reverseDrive = new JoystickButton(m_driveStick, 3);
+    
+    public final JoystickButton m_bumpArcade = new JoystickButton(m_driveStick, 6);
 
     //public final JoystickButton m_cameraFwd = new JoystickButton(m_driveStick, 7);
     //public final JoystickButton m_cameraRev = new JoystickButton(m_driveStick, 8);
@@ -310,6 +312,8 @@ public class OI
           //m_replayReplay.whenPressed(new ReplayCommand(m_robot.getDrivetrain(), m_robot.getLauncher()));
 
         m_reverseDrive.toggleWhenPressed(new ReverseArcadeDriveCommand(m_robot.getDrivetrain(), m_robot.getCameras()));
+        
+        m_bumpArcade.whileHeld(BumpArcadeCommand);
     }
 
     private void initIntakeOI()
